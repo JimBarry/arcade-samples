@@ -1,3 +1,8 @@
+//an arcade script you use on a polygon layer, along
+//with a FeatureSet from a points layer, when
+//you want to calc a value for each polygon based on
+//how many points are in it
+
 //where 'bike_racks' is the name of the points layer
 var racks = FeatureSetByName($map,'bike_racks');
 
