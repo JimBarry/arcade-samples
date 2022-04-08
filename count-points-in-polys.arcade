@@ -1,0 +1,11 @@
+//where 'bike_racks' is the name of the points layer
+var racks = FeatureSetByName($map,'bike_racks');
+
+//where $feature is each polygon feature in THIS layer
+var rackcount = Count(Intersects(racks, $feature));
+
+//to convert the number to a string to trim it
+return Text(rackcount);
+
+//
+//
