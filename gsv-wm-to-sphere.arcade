@@ -10,7 +10,7 @@ var shift = PI * rMajor;
 var Longitude = PointGeometry.x / shift * 180.0;
 var Latitude = PointGeometry.y / shift * 180.0;
 Latitude = 180 / PI * (2 * Atan(Exp(Latitude * PI / 180.0)) - PI / 2.0);
-prec = '#.00000';
+var prec = '#.00000';
 
 // build Google Street View URL and params
 var url = "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=" + text(Latitude, prec) + "," + text(Longitude, prec) + "&heading=170&pitch=15&fov=65";
