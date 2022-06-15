@@ -1,3 +1,6 @@
+// Arcade script for configuring a point layer popup.
+// Point location is passed to Google Street View for display in a browser
+
 // get point geometry X,Y
 var PointGeometry = Geometry($feature);
 
