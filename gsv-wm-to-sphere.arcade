@@ -1,0 +1,18 @@
+// get point geometry X,Y
+var PointGeometry = Geometry($feature);
+
+// convert WM to spherical (ie, close enough)
+var rMajor = 6378137;
+var shift = PI * rMajor;
+var Longitude = PointGeometry.x / shift * 180.0;
+var Latitude = PointGeometry.y / shift * 180.0;
+Latitude = 180 / PI * (2 * Atan(Exp(Latitude * PI / 180.0)) - PI / 2.0);
+
+// build Google Street View URL and params
+var url = "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=" + text(Latitude) + "," + text(Longitude) + "&heading=170&pitch=15&fov=65";
+return url;
+
+// SOURCES:
+// https://gis.harvard.edu/faq/how-link-google-street-view-images-points-arcgis-online
+// https://developers.google.com/maps/documentation/urls/get-started#street-view-action
+// http://dotnetfollower.com/wordpress/2011/07/javascript-how-to-convert-mercator-sphere-coordinates-to-latitude-and-longitude/
