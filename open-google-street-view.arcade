@@ -5,6 +5,8 @@
 //
 // SOURCE:  https://gis.harvard.edu/faq/how-link-google-street-view-images-points-arcgis-online
 //
+// GOOGLE STREET VIEW API DOC: https://developers.google.com/maps/documentation/urls/get-started#street-view-action
+//
 //
 
 var PointGeometry = Geometry($feature);
@@ -26,5 +28,9 @@ Latitude = 180 / PI * (2 * Atan(Exp(Latitude * PI / 180.0)) - PI / 2.0);
 }
 
 if (ArcadeSr == 4326) {  Console("4326 Spatial Reference - No Conversion Necessary");  Latitude = ArcadeY;  Longitude = ArcadeX;} else if (ArcadeSr == 102100) {  Console("102100 Spatial Reference - Conversion Necessary");  AuxSphereToLatLon(ArcadeX, ArcadeY);} else {  Console(ArcadeSr + " Spatial Reference is not supported - currently works with Web Maps where the basemap is in WGS84 (4326) or Web Mercator Auxiliary Sphere 102100");}
-var url = "http://www.google.com/maps/@?api=1&map_action=pano&viewpoint=" + text(Latitude) + "," + text(Longitude);
+//var url = "http://www.google.com/maps/@?api=1&map_action=pano&viewpoint=" + text(Latitude) + "," + text(Longitude);
+
+//SEE LINK TO API DOC ABOVE FOR MORE INFO ABOUT URL PARAMETERS AND VALUES
+var url = "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=" + text(Latitude) + "," + text(Longitude) + "&heading=180&pitch=15&fov=65";
+
 return url;
