@@ -3,9 +3,10 @@
 // open-google-street-view.arcade
 // Given a hosted feature layer on ArcGIS Online, configure a new virtual column in the popup using the code below
 //
-// SOURCE:  https://gis.harvard.edu/faq/how-link-google-street-view-images-points-arcgis-online
-//
-// GOOGLE STREET VIEW API DOC: https://developers.google.com/maps/documentation/urls/get-started#street-view-action
+// SOURCES:
+// https://gis.harvard.edu/faq/how-link-google-street-view-images-points-arcgis-online
+// https://developers.google.com/maps/documentation/urls/get-started#street-view-action
+// http://dotnetfollower.com/wordpress/2011/07/javascript-how-to-convert-mercator-sphere-coordinates-to-latitude-and-longitude/
 //
 //
 
